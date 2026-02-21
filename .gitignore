@@ -1,0 +1,18 @@
+# Node
+node_modules
+dist
+.vite
+.env
+
+# .NET
+bin/
+obj/
+*.user
+*.suo
+
+# SQLite
+*.db
+data/*.db
+
+# Mac
+.DS_Store

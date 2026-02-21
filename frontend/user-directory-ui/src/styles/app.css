@@ -1,0 +1,111 @@
+:root {
+  --bg: #0b1220;
+  --card: #111a2d;
+  --text: #e8eefc;
+  --muted: #b7c2dd;
+  --border: rgba(255,255,255,0.10);
+  --primary: #4f7cff;
+  --danger: #ff4f6a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(1200px 600px at 20% 0%, #132043, var(--bg));
+  color: var(--text);
+}
+
+.container {
+  width: min(980px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.page { padding: 24px 0 64px; }
+
+.title { margin: 0 0 16px; font-size: 28px; }
+
+.card {
+  background: rgba(17, 26, 45, 0.92);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.muted { color: var(--muted); }
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: rgba(10, 16, 30, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+}
+
+.brand { font-weight: 700; letter-spacing: 0.2px; }
+
+.nav { display: flex; gap: 10px; }
+
+.navlink {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+}
+.navlink.active {
+  color: var(--text);
+  border-color: var(--border);
+  background: rgba(255,255,255,0.06);
+}
+
+.spinner {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  border: 3px solid rgba(255,255,255,0.20);
+  border-top-color: rgba(255,255,255,0.85);
+  animation: spin 0.9s linear infinite;
+  margin-bottom: 10px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.error {
+  border-color: rgba(255,79,106,0.35);
+}
+.error-title { color: #ffd0d7; font-weight: 700; margin-bottom: 6px; }
+
+.toast {
+  position: fixed;
+  right: 18px;
+  top: 72px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(17, 26, 45, 0.96);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+}
+.toast-success { border-color: rgba(79, 255, 170, 0.25); }
+.toast-error { border-color: rgba(255, 79, 106, 0.35); }
+
+.toast-close {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 14px;
+}
